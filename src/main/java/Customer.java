@@ -3,11 +3,13 @@ public class Customer {
     private String name;
     private double wallet;
     private int table;
+    private Dish dish;
 
     public Customer(String name, double wallet, int table){
         this.name = name;
         this.wallet = wallet;
         this.table = table;
+        this.dish = null;
     }
 
     public String getName(){
@@ -26,9 +28,19 @@ public class Customer {
         wallet -= cost;
     }
 
-    public Order placeOrder(int orderId, int quantity, MenuItem menuItem, int table){
-        Order order = new Order(1, 1, MenuItem.LETTUCE, table);
+    public Order placeOrder(int quantity, MenuItem menuItem, int table){
+        Order order = new Order( 1, MenuItem.LETTUCE, table);
         return order;
+    }
+
+    public void takeDishFromWaiter(Dish dishFromWaiter){
+        dish = dishFromWaiter;
+    }
+
+
+
+    public void eatDish(){
+        dish = null;
     }
 
 }

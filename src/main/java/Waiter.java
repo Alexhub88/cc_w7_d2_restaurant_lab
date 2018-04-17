@@ -3,11 +3,14 @@ public class Waiter {
     private String name;
     private double bumBagCash;
     private Order orderTaken;
+    private Dish dish;
+
 
     public Waiter(String name, double bumBagCash){
         this.name = name;
         this.bumBagCash = bumBagCash;
         this.orderTaken = null;
+        this.dish = null;
     }
 
     public String getName() {
@@ -26,6 +29,16 @@ public class Waiter {
         this.orderTaken = order;
     }
 
+    public void getDishFromKitchen(){
+       dish =  Kitchen.takeOrderReturnDish(orderTaken);
+    }
 
+    public void serveDishToCustomer(Customer customer){
+        customer.takeDishFromWaiter(dish);
+        dish = null;
+    }
 
+    public Dish getDish() {
+        return dish;
+    }
 }

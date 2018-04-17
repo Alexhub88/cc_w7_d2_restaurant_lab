@@ -30,7 +30,7 @@ public class CustomerTest {
 
     @Test
     public void canOrderItem(){
-        Order orderToCheck = customer1.placeOrder(1, 1, MenuItem.LETTUCE, 3);
+        Order orderToCheck = customer1.placeOrder(1, MenuItem.LETTUCE, 3);
         assertEquals(MenuItem.LETTUCE, orderToCheck.getMenuItem());
     }
 

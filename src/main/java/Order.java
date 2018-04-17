@@ -5,12 +5,14 @@ public class Order {
     private MenuItem menuItem;
     private int tableId;
 
-    public Order(int orderId, int quantity, MenuItem menuItem,int tableId){
-        this.orderId = orderId;
+    public Order(int quantity, MenuItem menuItem,int tableId){
+        this.orderId = (int)(Math.random() * 10000.0);
         this.quantity = quantity;
         this.menuItem = menuItem;
         this.tableId = tableId;
     }
+
+
 
     public int getOrderId(){
         return this.orderId;
